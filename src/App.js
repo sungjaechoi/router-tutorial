@@ -11,6 +11,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/profiles/:username" element={<Profile/>}/>
+      {/* <Route path="/blogs/:id" element={<Profile/>}/> */}
     </Routes>
   );
 }
