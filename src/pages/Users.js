@@ -13,7 +13,7 @@ const Users = () => {
                 <strong>
                   유저 이름 : {item.name}
                 </strong>
-                <Link style={{display:"block"}} to={`/users/${item.id - 1}`}>{item.name} 상세 정보보기</Link>
+                <Link style={{display:"block"}} to={`/users/${item.id}`}>{item.name} 상세 정보보기</Link>
               </li>
             )
           } )
