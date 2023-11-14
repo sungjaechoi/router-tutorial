@@ -7,14 +7,14 @@ const Product = () => {
     2: { id: 2, name: 'Product 2', description: 'Description for Product 2' },
     3: { id: 3, name: 'Product 3', description: 'Description for Product 3' },
   };
-
+  // useParams를 사용하여 현재 라우트의 URL 파라미터를 가져온다.
   const {ID} = useParams()
+
+  //'products' 객체에서 상품 정보를 가져온다.
   const ProductData = products[ID];
+
+  //'ProductData'객체의 name과 description 이름으로 구조분해 할당 한다.
   const {name, description} = ProductData;
-  
-  console.log(products[ID].id)
-  console.log(products[ID].id === Number(ID))
-  console.log(typeof Number(ID))
 
   
   return(
