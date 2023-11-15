@@ -12,7 +12,12 @@ const Userinfo = () => {
   console.log('userIndex',userIndex)
   
   //배열의 대괄호 표기법[index]에 userIndex변수를 할당해서 동적 배열 타입으로 userinfo에 할당한다
+  // feedback -> 변수명의 혼동 ? Data = 객체  ,  list = 배열 
   const userinfo = UserData[userIndex]
+  // Data 와 list 예시
+  // Data -> 단수
+  // const userData = {name: '조민혁', age: 33} => Date 객체로 본다./ Date 변수명 비추 
+  // const userList = [{name: '조민혁', age: 33},{name: '조민혁', age: 33},{name: '조민혁', age: 33},{name: '조민혁', age: 33}]
 
   //조건 1. 최 하단 코드 "다음 유저 바로가기"는 현재 UseData index의 다음 index 값을 필요로 한다.
   //조건 2. 마지막 index에 도달하게 되면 undefined를 반환한다.
@@ -24,8 +29,14 @@ const Userinfo = () => {
   console.log("총 원소수",UserData.length)
   console.log("현재 인덱스 + 1",userIndex+1)
 
+  
+  
   //nextId는 조건에 따라 <Link>에 할당될 다음 index를 할당 하거나 undefined를 반환한다.
-  const nextId = checkNext ? UserData[userIndex + 1].id : undefined
+  const nextItem = UserData[userIndex + 1]
+
+  //feedback - 표현식이 복잡할 경우 적절한 변수명으로 라벨링이 필요
+  //const nextId = checkNext ? UserData[userIndex + 1].id : undefined
+  const nextId = checkNext ? nextItem.id : undefined
 
   //UserData가 있을시 무시되며, 없을시 return된다.
   if (userinfo === undefined){
