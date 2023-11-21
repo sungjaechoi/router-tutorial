@@ -24,17 +24,21 @@ const About = () => {
   };
 
   const AddStringQuery = () => {
-    console.log('실행')
-    const addString = () => {
-      console.log('a')
-      searchParams.set('query', 'add')
-      setSearchParams(searchParams)
-    }
-    const CurrentQuerValue = () => {
-      console.log('b')
-      setSearchParams(searchParams)
-    }
-    return queryValue === 'example' ? addString() : CurrentQuerValue() 
+    // console.log('실행')
+    // const addString = () => {
+    //   console.log('a')
+    //   searchParams.set('query', 'add')
+    //   setSearchParams(searchParams)
+    // }
+    // const CurrentQuerValue = () => {
+    //   console.log('b')
+    //   setSearchParams(searchParams)
+    // }
+    // return queryValue === 'example' ? addString() : CurrentQuerValue() 
+    const nextQueryValue = queryValue === 'example' ? 1 : parseInt(queryValue) + 1
+    // setSearchParams({query: nextQueryValue})
+    const nextQueryObj = {query: nextQueryValue}
+    setSearchParams(nextQueryObj)
   }
 
   return (
