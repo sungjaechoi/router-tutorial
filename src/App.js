@@ -5,8 +5,9 @@ import Userinfo from "./pages/Userinfo";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Users/>}/>
-      <Route path="/users/:userID" element={<Userinfo/>}/>
+      <Route path="/" element={<Users/>}>
+        <Route path="/users/:userID" element={<Userinfo/>}/>
+      </Route>
     </Routes>
     
   );
