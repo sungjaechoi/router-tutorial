@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 
 const Home = () => {
   return(
     <div>
       <h1>Welcome to the Home Page!</h1>
+      <Outlet/>
       <ul>
         <li>
           <Link to="/products/1">상품 1</Link>

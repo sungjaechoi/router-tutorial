@@ -5,8 +5,9 @@ import Product from "./pages/Product";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/products/:ID" element={<Product/>}/>
+      <Route path="/" element={<Home/>} >
+        <Route path="/products/:ID" element={<Product/>}/>
+      </Route>
     </Routes>
   )
 }
