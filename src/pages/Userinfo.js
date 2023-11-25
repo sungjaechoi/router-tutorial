@@ -1,8 +1,21 @@
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import UserData from './UserData'
 
 const Userinfo = () => {
+  const [goBackClickChicked, setGoBackClickChicked] = useState(false);
+  console.log(goBackClickChicked)
+  const navigate = useNavigate()
+
+  const goBack = () => {
+    navigate(-1)
+    setGoBackClickChicked(true)
+  }
+
+  const goForward = () =>{
+    navigate(1)
+  }
+
   // 현재 페이지의 URL parameter를 객체로 가져온다.
   const {userID} = useParams()
   
@@ -53,6 +66,8 @@ const Userinfo = () => {
 
   return(
     <div>
+      <button onClick={goBack}>이전 으로</button>
+      {goBackClickChicked ? <button onClick={goForward}>앞으로 으로</button> : undefined}
       <dl>
         <dt>유저 명 : {name}</dt>
         <dd>ID : {id}</dd>
@@ -61,7 +76,6 @@ const Userinfo = () => {
       {
         nextId ? <Link to={`/users/${nextId}`}>다음 유저 바로가기</Link> : undefined
       }
-      
     </div>
   )
 }
